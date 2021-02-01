@@ -1,100 +1,89 @@
-
-
-let choice;
-let nums = [];
-let operaion = " ";
-
-
-choice=prompt("how many numbers do you want to enter?");
-for (let index = 0; index < choice; index++) {
-    num1 = prompt("enter num");
-    nums.push(num1);
-    }
-operaion = prompt("enter operation from add,sub,mult,div");
-
-
-
-
-    
-    function sum(nums) {
-        var result=0;
-        for (let index = 0; index < nums.length; index++) {
-            if(isNaN(nums[index])){
-                continue;
-                 }
-            result += Number(nums[index]);
-            }
-        return result;
-    }
-    function sub(nums) {
-        var result=0;
-        for (let index = 0; index < nums.length; index++) {
-            if(isNaN(nums[index])){
-                continue;
-                 }
-           result=(Number(nums[index])-result);
-            }
-        return result;
-    }
-    function mult(nums) {
-        var result=1;
-        for (let index = 0; index < nums.length; index++) {
-            
-           result*=Number(nums[index]);
-            }
-        return result;
-        
+additionbutton=document.getElementById("additionbutton");
+addition=function(){
+    var sum=0;
+    var number1=document.getElementById("number1");
+    number1=number1.value;
+    var nums=number1.split(',');
+    //const number2=document.getElementById("number2");
+    for (let index = 0; index < nums.length; index++) {
+        sum += parseInt(nums[index]);;
         
     }
-    function div(nums) {
-        var result=1;
-        for (let index = 0; index < nums.length; index++) {
-            if (Number(nums[index])!==0) {
-                result=Number(nums[index])/result;
-            }
-           else{
-            alert("division by zero");
-            break;
-           }
-
-                }
-        return result;
-        
-        
-    }
-    switch(operaion) {
-    case "add": 
-        console.log(sum(nums));
-        break;
-        
-    
-    case "sub" : 
-        console.log(sub(nums));
-        break;
-        
-    
-    case "mult" : 
-        console.log(mult(nums));
-        break;
-        
-    
-    case "div" : 
-        console.log(div(nums));
-        break;
-        
-    default:
-        console.log('Invalid operator');
-        break;
+    const result = document.getElementById("result");
+    result.innerText=sum;
 }
+
+additionbutton.addEventListener("click",addition);
+
+//substraction
+substractionbutton=document.getElementById("substractionbutton");
+substraction=function(){
+    const number1=document.getElementById("number1");
+    const number2=document.getElementById("number2");
+
+    const diff=parseInt(number1.value) - parseInt(number2.value);
+
+    const result = document.getElementById("result");
+    result.innerText=diff;
+}
+
+substractionbutton.addEventListener("click",substraction);
+
+//multiplication
+
+multiplybutton=document.getElementById("multiplybutton");
+multiplication=function(){
+    var product=1;
+    var number1=document.getElementById("number1");
+    number1=number1.value;
+    var nums=number1.split(',');
+    //const number2=document.getElementById("number2");
+    for (let index = 0; index < nums.length; index++) {
+        product *= parseInt(nums[index]);;
+        
+    }
+    const result = document.getElementById("result");
+    result.innerText=product;
     
+}
+
+multiplybutton.addEventListener("click",multiplication);
+
+//division
+
+divisonbutton=document.getElementById("divisonbutton");
+division=function(){
     
+    const number1=document.getElementById("number1");
+    const number2=document.getElementById("number2");
+    if (parseInt(number2.value) !==0){
+    const divResult=parseInt(number1.value) / parseInt(number2.value);
+    const result = document.getElementById("result");
+    result.innerText=divResult;
+    }
+    else{
+        alert("division by zero not possible!!!")
+    }
+    
+}
+
+divisonbutton.addEventListener("click",division);
+
+//power
+
+powerbutton=document.getElementById("powerbutton");
+power=function(){
+    const number1=document.getElementById("number1");
+    const number2=document.getElementById("number2");
+
+    const raiser=parseInt(number1.value) ** parseInt(number2.value);
+    const result = document.getElementById("result");
+    result.innerText=raiser;
+}
+
+powerbutton.addEventListener("click",power);
 
 
 
 
-
-
-
-
-
-
+ 
