@@ -23,36 +23,46 @@ const reload = document.querySelector('.fa');
 var spanesItems = document.getElementsByClassName('badge');
 
 //location
-var ports = window.location.port;
-var hostNames = window.location.hostname;
 var hrefs = window.location.href;
 var hosts = window.location.host;
 var protocols = window.location.protocol;
+var ports = window.location.port;
+var hostNames = window.location.hostname;
+
+//browser information
+var appName = window.navigator.appName;
+var appVersion = window.navigator.appVersion;
+var platform = window.navigator.platform;
+var language = window.navigator.language;
+var cookieEnabled = window.navigator.cookieEnabled;
+
 
 //screen info
-var colorDepth = screen.colorDepth;
 var height = screen.height;
 var width = screen.width;
 var pixelDepth = screen.pixelDepth;
 
-//browser info
-var platform = window.navigator.platform;
-var language = window.navigator.language;
-var appName = window.navigator.appName;
+
+//history
+var length = window.history.length;
+var state = window.history.state;
 
 
-spanesItems[0].innerHTML = ports;
-spanesItems[1].innerHTML = hostNames;
-spanesItems[2].innerHTML = hrefs;
-spanesItems[3].innerHTML = hosts;
-spanesItems[4].innerHTML = protocols;
-spanesItems[5].innerHTML = colorDepth;
-spanesItems[6].innerHTML = height;
-spanesItems[7].innerHTML = width;
-spanesItems[8].innerHTML = pixelDepth;
-spanesItems[9].innerHTML = platform;
-spanesItems[10].innerHTML = language;
-spanesItems[11].innerHTML = appName;
+spanesItems[0].innerHTML = hrefs;
+spanesItems[1].innerHTML = hosts;
+spanesItems[2].innerHTML = protocols;
+spanesItems[3].innerHTML = ports;
+spanesItems[4].innerHTML = hostNames;
+spanesItems[5].innerHTML = appName;
+spanesItems[6].innerHTML = appVersion;
+spanesItems[7].innerHTML = platform;
+spanesItems[8].innerHTML = language;
+spanesItems[9].innerHTML = cookieEnabled;
+spanesItems[10].innerHTML = height;
+spanesItems[11].innerHTML = width;
+spanesItems[12].innerHTML = pixelDepth;
+spanesItems[13].innerHTML = length;
+spanesItems[14].innerHTML = state;
 
 
 

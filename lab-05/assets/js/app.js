@@ -4,7 +4,8 @@ const form = document.querySelector('#task-form'); //The form at the top
 const filter = document.querySelector('#filter'); //the task filter text field
 const taskList = document.querySelector('.collection'); //The UL
 const clearBtn = document.querySelector('.clear-tasks'); //the all task clear button
-
+const ascendBtn = document.querySelector('#ascending');
+const descendBtn = document.querySelector('#descending');
 const reloadIcon = document.querySelector('.fa'); //the reload button at the top navigation 
 
 // Add Event Listener  [Form , clearBtn and filter search input ]
@@ -20,6 +21,13 @@ taskList.addEventListener('click', removeTask);
 // Event Listener for reload 
 reloadIcon.addEventListener('click', reloadPage);
 
+//ascend
+ascendBtn.addEventListener('click', ascend);
+//desend
+descendBtn.addEventListener('click', descend);
+
+// Change the color of reload icon
+reloadIcon.style.color = 'white';
 
 
 
@@ -92,7 +100,20 @@ function filterTasks(e) {
     
     
     */
-
+   let searcher = filter.value.toUpperCase();
+   const searching = document.querySelectorAll('.collection-item');
+   searching.forEach((val) => {
+     if (val.textContent.toUpperCase().indexOf(searcher) > -1) {
+       val.style.display = 'block';
+     } else if (val.textContent.toUpperCase() != searcher) {
+       val.style.display = 'none';
+     }
+     if (searcher == '') {
+       searching.forEach((val) => {
+         val.style.display = 'block';
+       });
+     }
+   });
 }
 
 // Remove Task function definition 
@@ -112,3 +133,29 @@ function reloadPage() {
     //using the reload fun on location object 
     location.reload();
 }
+
+function ascend(e) {
+    if (sorted) {
+      return;
+    }
+    const searchRes = document.querySelectorAll('.collection-item');
+  }
+  function descend(e) {
+    if (sorted == false) {
+      return;
+    }
+    const searching = document.querySelectorAll('.collection-item');
+    
+    // var arr = searchRes.forEach((val) => {
+    //   return val.textContent || val.innerHTML;
+    // });
+    var arr = Array();
+    searching.forEach((val) => {
+      arr.push(val.innerHTML);
+    });
+    arr.reverse();
+  
+    searching.forEach((val, index) => {
+      val.innerHTML = arr[index];
+    });
+    sorted = false;}
