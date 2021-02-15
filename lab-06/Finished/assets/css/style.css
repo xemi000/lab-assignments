@@ -1,3 +1,16 @@
 i {
     color: red;
 }
+select{
+    display: block;
+}
+.collection{
+    width: 75%;
+}
+
+
+#sorting{
+    background-color: rgb(123, 117, 194);
+    color:blue;
+    
+}

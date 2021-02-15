@@ -134,28 +134,5 @@ function reloadPage() {
     location.reload();
 }
 
-function ascend(e) {
-    if (sorted) {
-      return;
-    }
-    const searchRes = document.querySelectorAll('.collection-item');
-  }
-  function descend(e) {
-    if (sorted == false) {
-      return;
-    }
-    const searching = document.querySelectorAll('.collection-item');
+
     
-    // var arr = searchRes.forEach((val) => {
-    //   return val.textContent || val.innerHTML;
-    // });
-    var arr = Array();
-    searching.forEach((val) => {
-      arr.push(val.innerHTML);
-    });
-    arr.reverse();
-  
-    searching.forEach((val, index) => {
-      val.innerHTML = arr[index];
-    });
-    sorted = false;}

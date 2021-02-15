@@ -99,3 +99,20 @@ function loadDataNew() {
         });
 
 }
+function chartOnClick() {
+    //How long to show the spinner for in ms (eg 3 seconds)
+    var spinnerShowTime = 30000
+  
+    //Show the spinner
+    document.getElementById('ui text loader').style.display = "";
+  
+    //Change the chart src
+    //document.getElementById('chart').src = '/charts/10.png';
+  
+    //Set the timeout on the spinner
+    setTimeout("hideSpinner()", spinnerShowTime);
+  }
+  
+  function hideSpinner() {
+    document.getElementById('ui text loader').style.display = "none";
+  }
