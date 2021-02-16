@@ -1,6 +1,6 @@
-const secDiv = document.getElementById('sec');
-const minDiv = document.getElementById('min');
-const hourDiv = document.getElementById('hour');
+const secD = document.getElementById('sec');
+const minD = document.getElementById('min');
+const hourD = document.getElementById('hour');
 
 setInterval(updateClock, 1000);
 
@@ -10,9 +10,9 @@ function updateClock(){
 	let min = (date.getMinutes() + sec) / 60;
 	let hour = (date.getHours() + min) / 12;
 
-	secDiv.style.transform = "rotate(" + (sec * 360) + "deg)";
-	minDiv.style.transform = "rotate(" + (min * 360) + "deg)";
-	hourDiv.style.transform = "rotate(" + (hour * 360) + "deg)";
+	secD.style.transform = "rotate(" + (sec * 360) + "deg)";
+	minD.style.transform = "rotate(" + (min * 360) + "deg)";
+	hourD.style.transform = "rotate(" + (hour * 360) + "deg)";
 }
 
 updateClock();

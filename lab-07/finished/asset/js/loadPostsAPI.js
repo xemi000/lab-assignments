@@ -73,6 +73,7 @@ function loadDataNew() {
 
         <div class="item">
         <div class="image">
+                
             <img src=" https://images.unsplash.com/photo-1499482125586-91609c0b5fd4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
         </div>
         <div class="content">
@@ -99,20 +100,8 @@ function loadDataNew() {
         });
 
 }
-function chartOnClick() {
-    //How long to show the spinner for in ms (eg 3 seconds)
-    var spinnerShowTime = 30000
-  
-    //Show the spinner
-    document.getElementById('ui text loader').style.display = "";
-  
-    //Change the chart src
-    //document.getElementById('chart').src = '/charts/10.png';
-  
-    //Set the timeout on the spinner
-    setTimeout("hideSpinner()", spinnerShowTime);
-  }
-  
-  function hideSpinner() {
-    document.getElementById('ui text loader').style.display = "none";
-  }
+
+
+  $(window).on("load",function(){
+    $(".loader-wrapper").fadeOut("slow");
+  });
