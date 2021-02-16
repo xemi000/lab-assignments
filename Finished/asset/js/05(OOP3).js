@@ -23,7 +23,7 @@ function Person(firstName, lastName) {
 
 //4. Create  Object using ES6 class by passing firstName,lastName ["Bran Stark"]
 
-
+var bran = Person("bran","stark")
 
 //5. Display the greeting on Bran Object [remove the string when you have the object]
-Obj_C3.innerHTML = "Bran.greeting()";
+Obj_C3.innerHTML = "bran.getFullName()";
