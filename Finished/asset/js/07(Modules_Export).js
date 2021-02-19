@@ -1,7 +1,5 @@
-//1. Add export key work before const  
-const myVar = "Export Var By Adding Export Keyword In the Front!!";
-
-
+//1. Add export key work before const
+export const myVar = "Export Var By Adding Export Keyword In the Front!!";
 
 //export this function at last line
 function exp1() {
@@ -17,8 +15,6 @@ function exp3() {
 }
 //2. List export(comma separated list )
 
-
 //3. Export exp2 with AliasName ==> exp2_Alias
-
-
 //4. Export exp3
+export { exp1, exp2 as exp2alias, exp3 };
